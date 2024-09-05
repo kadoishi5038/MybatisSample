@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org">
+<head
+  th:replace="common/head :: head_fragment(title = 'ユーザー情報編集', scripts = ~{::script}, links = ~{::link})"></head>
+<body>
+  <div class="container">
+    <div th:if="${validationError}" th:each="error : ${validationError}">
+      <label class="text-danger" th:text="${error}"></label>
+    </div>
+    <h1>テストエディット</h1>
+	<div>
+      <button onclick="add()">行追加</button>
+	  <button onclick="del()">行削除</button>
+	</div>
+
+	<table id="tbl" class="table table-striped">
+	  <thead>
+	    <tr>
+	      <th>ISBN</th>
+	      <th>タイトル</th>
+	      <th>値段</th>
+	      <th>借りた人</th>
+	      <th>ID</th>
+	    </tr>
+	  </thead>
+	  <tbody id="tblbody">
+	    <tr th:each="book : ${booklist}" th:object="${book}" class="align-middle">
+	      <td th:text="*{isbn}"></td>
+	      <td th:text="*{title}"></td>
+	      <td th:text="*{price}"></td>
+	      <td th:text="*{name}"></td>
+		  <td th:text="*{id}"></td>
+	    </tr>
+	  </tbody>
+	</table>
+
+   </div>
+</body>
+</html>
