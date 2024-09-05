@@ -42,6 +42,10 @@
                         <td>
                             <a th:href="@{/user/{id}/edit(id=*{id})}" class="btn btn-primary">編集</a>
                             <a th:href="@{/user/{id}/delete(id=*{id})}" class="btn btn-secondary">削除</a>
+							<form th:action="@{/user/{id}/booklist(id=*{id})}" method="GET" th:name="'form'+ *{id}">
+							    <input type="button" value="借りている本" th:onclick="|openWin('form*{id}');|" class="btn btn-secondary" />
+							</form>
+
                         </td>
                     </tr>
                 </tbody>
