@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry
+        location="C:/Users/i031/.gradle/caches/modules-2/files-2.1/com.mysql/mysql-connector-j/8.3.0/8d17dc45e67cc13840ad6ee05e31adabe65e804c/mysql-connector-j-8.3.0-sources.jar" />
+    <context id="context1">
+ 
+<!--     JDBCの設定です (1) -->
+        <jdbcConnection
+            driverClass="com.mysql.cj.jdbc.Driver"
+            connectionURL="jdbc:mysql://localhost:3306/sampledb?enabledTLSProtocols=TLSv1.2"
+            userId="root"
+            password="root123"
+        />
+ 
+<!--     自動生成するエンティティの設定です (2) -->
+        <javaModelGenerator
+            targetPackage="com.example.entity1"
+            targetProject="MybatisSample/src/main/java/"
+        />
+        <!-- 
+        <sqlMapGenerator
+            targetPackage="com.example.entity2"
+            targetProject="MybatisSample/src/main/java/"
+        />
+        -->
+        
+        <javaClientGenerator
+            targetPackage="com.example.entity3"
+            targetProject="MybatisSample/src/main/java/"
+            type="XMLMAPPER"
+        />
+ 
+<!--     生成対象のテーブルです（3) -->
+        <table schema="sampledb" tableName="bookinfo" />
+    </context>
+</generatorConfiguration>
