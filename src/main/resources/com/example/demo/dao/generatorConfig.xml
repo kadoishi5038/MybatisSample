@@ -18,12 +18,12 @@
             targetPackage="com.example.entity1"
             targetProject="MybatisSample/src/main/java/"
         />
-        <!-- 
+         
         <sqlMapGenerator
             targetPackage="com.example.entity2"
             targetProject="MybatisSample/src/main/java/"
         />
-        -->
+        
         
         <javaClientGenerator
             targetPackage="com.example.entity3"

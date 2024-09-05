@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<classPathEntry location="C:/Users/i031/.gradle/caches/modules-2/files-2.1/com.mysql/mysql-connector-j/8.3.0/8d17dc45e67cc13840ad6ee05e31adabe65e804c/mysql-connector-j-8.3.0-sources.jar"></classPathEntry>
+<context id="context1">
+<jdbcConnection connectionURL="jdbc:mysql://localhost:3306/sampledb?characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;useSSL=false"
+driverClass="com.mysql.cj.jdbc.Driver"
+password="root123" userId="root" />
+<javaModelGenerator targetPackage="com.dreamhanks.dto" targetProject="MybatisSample/src/main/java" />
+<sqlMapGenerator targetPackage="mappers" targetProject="MybatisSample/src/main/resources" />
+<javaClientGenerator targetPackage="com.dreamhanks.dao" targetProject="MybatisSample/src/main/java" type="XMLMAPPER" />
+<table schema="sampledb" tableName="user"/>
+<table schema="sampledb" tableName="bookinfo"/>
+</context>
+</generatorConfiguration>
