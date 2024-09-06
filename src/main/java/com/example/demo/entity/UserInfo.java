@@ -5,6 +5,7 @@ import java.util.Date;
 
 import lombok.Data;
 
+
 /**
  * ユーザー情報 Entity
  */
