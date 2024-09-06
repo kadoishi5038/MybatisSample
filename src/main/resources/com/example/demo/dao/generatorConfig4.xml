@@ -18,7 +18,7 @@
 
     <!-- SELECT 結果等を格納するドメインモデルを生成する設定 -->
     <!-- targetProjectには、プロジェクトフォルダも含めることに注意 -->
-    <javaModelGenerator targetPackage="com.example.demo.service" targetProject="MybatisSample/src/main/java">
+    <javaModelGenerator targetPackage="com.example.demo.entity" targetProject="MybatisSample/src/main/java">
       <property name="trimStrings" value="true" />
     </javaModelGenerator>
 
