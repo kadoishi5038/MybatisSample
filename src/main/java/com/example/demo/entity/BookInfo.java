@@ -5,7 +5,7 @@ import java.io.Serializable;
 import lombok.Data;
 
 /**
- * ユーザー情報 Entity
+ * bookinfo情報 Entity
  */
 @Data
 public class BookInfo implements Serializable {

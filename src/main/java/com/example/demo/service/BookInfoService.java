@@ -21,14 +21,14 @@ public class BookInfoService {
      * ユーザー情報 Mapper
      */
     @Autowired
-    private BookInfoMapper bookInfoMapper;
+    private BookInfoMapper userInfoMapper;
 
     /**
      * ユーザー情報全件検索
      * @return 検索結果
      */
     public List<BookInfo> findAll() {
-        return bookInfoMapper.findAll();
+        return userInfoMapper.findAll();
     }
 
     /**
@@ -36,7 +36,7 @@ public class BookInfoService {
      * @return 検索結果
      */
     public BookInfo findById(Long id) {
-        return bookInfoMapper.findById(id);
+        return userInfoMapper.findById(id);
     }
 
     /**
@@ -45,7 +45,7 @@ public class BookInfoService {
      * @return 検索結果
      */
     public List<BookInfo> search(UserSearchRequest userSearchRequest) {
-        return bookInfoMapper.search(userSearchRequest);
+        return userInfoMapper.search(userSearchRequest);
     }
 
     /**
@@ -53,7 +53,7 @@ public class BookInfoService {
      * @param userAddRequest リクエストデータ
      */
     public void save(UserAddRequest userAddRequest) {
-        bookInfoMapper.save(userAddRequest);
+        userInfoMapper.save(userAddRequest);
     }
 
     /**
@@ -61,7 +61,7 @@ public class BookInfoService {
      * @param userEditRequest リクエストデータ
      */
     public void update(UserUpdateRequest userUpdateRequest) {
-        bookInfoMapper.update(userUpdateRequest);
+        userInfoMapper.update(userUpdateRequest);
     }
 
     /**
@@ -69,6 +69,6 @@ public class BookInfoService {
      * @param id
      */
     public void delete(Long id) {
-        bookInfoMapper.delete(id);
+        userInfoMapper.delete(id);
     }
 }

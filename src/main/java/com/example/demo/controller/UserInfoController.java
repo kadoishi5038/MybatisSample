@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.example.demo.dto.BookInfoSearchRequest;
 import com.example.demo.dto.UserAddRequest;
 import com.example.demo.dto.UserSearchRequest;
 import com.example.demo.dto.UserUpdateRequest;
@@ -35,9 +36,6 @@ public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
 
-    /**
-     * bookinfo情報 Service
-     */
     @Autowired
     private BookInfoService bookInfoService;
 
@@ -59,11 +57,11 @@ public class UserInfoController {
      * @param model Model
      * @return 書籍情報一覧画面
      */
-    @SuppressWarnings("unchecked")
 	@GetMapping(value = "/user/{id}/booklist")
     public String displayList2(@PathVariable Long id, Model model) {
-        List<BookInfo> bookList = (List<BookInfo>) bookInfoService.findById(id);
-        model.addAttribute("booklist", bookList);
+        List<BookInfo> userList = bookInfoService.findAll();
+        model.addAttribute("userlist", userList);
+        model.addAttribute("userSearchRequest", new BookInfoSearchRequest());
         return "user/booklist";
     }
 
