@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.example.demo.dto.UserAddRequest;
 import com.example.demo.dto.UserSearchRequest;
 import com.example.demo.dto.UserUpdateRequest;
+import com.example.demo.entity.Bookinfo;
 import com.example.demo.entity.UserInfo;
+import com.example.demo.service.BookInfoService;
 import com.example.demo.service.UserInfoService;
 
 /**
@@ -33,6 +35,9 @@ public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
 
+    @Autowired
+    private BookInfoService bookInfoService;
+
     /**
      * ユーザー情報一覧画面を表示
      * @param model Model
@@ -44,6 +49,13 @@ public class UserInfoController {
         model.addAttribute("userlist", userList);
         model.addAttribute("userSearchRequest", new UserSearchRequest());
         return "user/search";
+    }
+
+    @GetMapping(value = "/user/{id}/booklist")
+    public String displayList2(Model model) {
+        List<Bookinfo> userList = bookInfoService.findAll();
+        model.addAttribute("userlist", userList);
+        return "user/booklist";
     }
 
     /**
