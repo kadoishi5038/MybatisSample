@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry
+		location="C:\Users\i031\.gradle\caches\modules-2\files-2.1\com.mysql\mysql-connector-j\8.3.0\1cc7fa5d61f4bbc113531a4ba6d85d41cf3d57e1\mysql-connector-j-8.3.0.jar" />
+
+	<context id="MySQLTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+
+    <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/sampledb?enabledTLSProtocols=TLSv1.2"
+        userId="root"
+        password="root123">
+    </jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator
+			targetProject="MybatisSample/src/main/java"
+			targetPackage="com.example.demo.model">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator
+			targetProject="MybatisSample/src/main/resources"
+			targetPackage="com.example.demo.dao">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetProject="MybatisSample/src/main/java"
+			targetPackage="com.example.demo.dao">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<table schema="sampledb" tableName="bookinfo">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+<!--		<table schema="DEMODB" tableName="FILE">-->
+<!--			<property name="useActualColumnNames" value="true" />-->
+<!--		</table>-->
+	</context>
+</generatorConfiguration>
